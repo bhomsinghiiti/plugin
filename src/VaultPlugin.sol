@@ -10,8 +10,6 @@ contract VaultPlugin  {
     uint256 public nextVaultId;
     mapping(uint256 => Vault) public vaults;
 
-    
-
     function performAction(uint256 input) external returns (uint256) {
         uint256 vaultId = nextVaultId++;
         vaults[vaultId] = Vault({

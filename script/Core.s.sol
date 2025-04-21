@@ -2,18 +2,14 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {Core} from "../src/Core.sol";
 
 contract CounterScript is Script {
-    Counter public counter;
-
-    function setUp() public {}
-
+    Core public core;
+    
     function run() public {
         vm.startBroadcast();
-
-        counter = new Counter();
-
+        core = new Core(address(this));
         vm.stopBroadcast();
     }
 }
